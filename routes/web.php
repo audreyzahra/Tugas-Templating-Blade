@@ -11,8 +11,23 @@
 |
 */
 
-Route::get('/', 'HomeController@home');
+Route::get('/', function() {
+    return view('items.table');
+});
+
+Route::get('/data-tables', function(){
+    return view('items.script');
+});
 
 Route::get('/register', 'AuthController@form');
 
 Route::get('/welcome', 'AuthController@welcome');
+
+Route::get('/blank', function() {
+    return view('layouts/blank');
+});
+
+Route::get('/items' , function(){
+    return view('items/index');
+});
+
